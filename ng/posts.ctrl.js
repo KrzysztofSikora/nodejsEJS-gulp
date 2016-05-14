@@ -1,8 +1,8 @@
 /**
  * Created by krzysztof on 26.04.16.
  */
-
-app.controller('PostsCtrl', function ($scope, PostsSvc) {
+angular.module('app')
+.controller('PostsCtrl', function ($scope, PostsSvc) {
 
     $scope.addPost = function () {
         if ($scope.postBody) {
