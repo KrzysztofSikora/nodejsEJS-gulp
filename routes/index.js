@@ -45,7 +45,8 @@ router.use( require('../controllers/static'))
 
 router.use(require('/home/krzysztof/IdeaProjects/nodejsEJS/controllers/api/posts.js'))
 
-
+router.use(require('/home/krzysztof/IdeaProjects/nodejsEJS-gulp/controllers/api/sessions.js'))
+router.use(require('/home/krzysztof/IdeaProjects/nodejsEJS-gulp/controllers/api/users.js'))
 
 // router.post('/api/posts', function (req, res) {
 //   console.log('Post został przyjęty!')

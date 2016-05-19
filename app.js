@@ -40,6 +40,13 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//add
+app.use('/api/sessions', require('/home/krzysztof/IdeaProjects/nodejsEJS-gulp/controllers/api/sessions.js'))
+app.use('/api/users', require('/home/krzysztof/IdeaProjects/nodejsEJS-gulp/controllers/api/users.js'))
+
+
+
+
 app.use('/', routes); // zmieniam z app.use('/', routes)
 app.use('/users', users);
 
