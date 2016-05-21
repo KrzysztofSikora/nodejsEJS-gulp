@@ -6,8 +6,7 @@ angular.module('app')
         $scope.login = function (username, password) {
             UserSvc.login(username, password)
                 .then(function (user) {
-                    // $scope.$emit('login', user)
-                    console.log(user)
+                    $scope.$emit('login', user)
                 })
         }
     })

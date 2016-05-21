@@ -7,7 +7,7 @@ var jwt    = require('jwt-simple')
 var User   = require('/home/krzysztof/IdeaProjects/nodejsEJS-gulp/models/user')
 var config = require('/home/krzysztof/IdeaProjects/nodejsEJS-gulp/config')
 
-router.get('api/users', function (req, res, next) {
+router.get('/', function (req, res, next) {
     if (!req.headers['x-auth']) {
         return res.sendStatus(401)
     }
@@ -18,7 +18,7 @@ router.get('api/users', function (req, res, next) {
     })
 })
 
-router.post('/users', function (req, res, next) {
+router.post('/', function (req, res, next) {
     var user = new User({username: req.body.username})
     bcrypt.hash(req.body.password, 10, function (err, hash) {
         if (err) { return next(err) }

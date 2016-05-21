@@ -12,11 +12,22 @@ angular.module('app')
                 //     return response.data
                 // })
         }
+        // svc.login = function (username, password) {
+        //     return $http.post('/api/sessions', {
+        //         username: username, password: password
+        //     }).then(function (val) {
+        //         svc.token = val.data
+        //         return svc.getUser()
+        //     })
+        // }
+
+
         svc.login = function (username, password) {
             return $http.post('/api/sessions', {
                 username: username, password: password
-            }).then(function (val) {
-                svc.token = val.data
+            }).then(function (response) {
+                svc.token = response.data
+                $http.defaults.headers.common['X-Auth'] = response.data
                 return svc.getUser()
             })
         }
