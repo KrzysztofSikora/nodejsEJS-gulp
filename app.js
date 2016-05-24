@@ -41,6 +41,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 //add
+app.use(require('/home/krzysztof/IdeaProjects/nodejsEJS-gulp/auth.js'))
 app.use('/api/sessions', require('/home/krzysztof/IdeaProjects/nodejsEJS-gulp/controllers/api/sessions.js'))
 app.use('/api/users', require('/home/krzysztof/IdeaProjects/nodejsEJS-gulp/controllers/api/users.js'))
 

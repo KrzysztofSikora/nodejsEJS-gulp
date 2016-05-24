@@ -19,12 +19,12 @@ app.use(bodyParser.json())
 // router.get('/', function(req, res) {
 //   res.sendfile('./layouts/posts.html');
 // });
-
-router.use( require('../controllers/static'))
 router.use(require('/home/krzysztof/IdeaProjects/nodejsEJS-gulp/auth.js'))
+router.use( require('../controllers/static'))
+
 // Adds
 
-router.use(require('/home/krzysztof/IdeaProjects/nodejsEJS/controllers/api/posts.js'))
+router.use(require('/home/krzysztof/IdeaProjects/nodejsEJS-gulp/controllers/api/posts.js'))
 
 router.use(require('/home/krzysztof/IdeaProjects/nodejsEJS-gulp/controllers/api/sessions.js'))
 router.use(require('/home/krzysztof/IdeaProjects/nodejsEJS-gulp/controllers/api/users.js'))
