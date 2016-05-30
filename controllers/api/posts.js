@@ -4,7 +4,7 @@
 
 var Post = require('/home/krzysztof/IdeaProjects/nodejsEJS-gulp/models/post');
 var router = require('express').Router()
-
+var websockets = require('../../websockets')
 
 router.get('/api/posts', function (req, res, next) {
     Post.find()
@@ -41,6 +41,7 @@ router.post('/api/posts', function (req, res, next) {
     post.username = req.auth.username
     post.save(function (err,post) {
         if (err) { return next(err) }
+        websockets.broadcast('new_post', post)
         res.json(201, post)
 
     })
