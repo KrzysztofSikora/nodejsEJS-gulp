@@ -10,14 +10,7 @@ angular.module('app')
                 //     return response.data
                 // })
         }
-        // svc.login = function (username, password) {
-        //     return $http.post('/api/sessions', {
-        //         username: username, password: password
-        //     }).then(function (val) {
-        //         svc.token = val.data
-        //         return svc.getUser()
-        //     })
-        // }
+
 
 
         svc.login = function (username, password) {
@@ -30,11 +23,15 @@ angular.module('app')
             })
                
         }
-        // svc.register = function (username, password) {
-        //     return $http.post('/api/users', {
-        //         username: username, password: password
-        //     }).then(function () {
-        //         return svc.login(username, password)
-        //     })
-        // }
+
+        svc.register = function (username, password) {
+            return $http.post('/api/users', {
+                username: username, password: password
+            }).then(function () {
+                return svc.login(username, password)
+
+            })
+
+        }
+        
     })
