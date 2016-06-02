@@ -2,10 +2,10 @@
  * Created by krzysztof on 19.05.16.
  */
 var router = require('express').Router()
-var User = require('/home/krzysztof/IdeaProjects/nodejsEJS-gulp/models/user')
+var User = require('./../../models/user')
 var bcrypt = require('bcrypt')
 var jwt = require('jwt-simple')
-var config = require('/home/krzysztof/IdeaProjects/nodejsEJS-gulp/config')
+var config = require('./../../config')
 router.post('/', function (req, res, next) {
     User.findOne({username: req.body.username})
         .select('password')

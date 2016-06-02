@@ -3,7 +3,7 @@
  */
 
 
-var db = require('/home/krzysztof/IdeaProjects/nodejsEJS-gulp/db');
+var db = require('../db');
 
 var Post = db.model('Post', {
     username: { type: String, required: true },
