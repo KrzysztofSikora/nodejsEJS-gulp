@@ -4,8 +4,8 @@
 var router = require('express').Router()
 var bcrypt = require('bcrypt')
 var jwt    = require('jwt-simple')
-var User   = require('/home/krzysztof/IdeaProjects/nodejsEJS-gulp/models/user')
-var config = require('/home/krzysztof/IdeaProjects/nodejsEJS-gulp/config')
+var User   = require('../../models/user')
+var config = require('../../config')
 
 router.get('/', function (req, res, next) {
     if (!req.headers['x-auth']) {
